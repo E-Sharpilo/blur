@@ -6,9 +6,17 @@ function init() {
     }
 }
 
-function showImage() {
-    let image = document.getElementById("zero");
-    image.src = "./img/zero.jpg"
+function showImage(event) {
+    let image = event.target;
+    let name = image.id;
+    image.src = "./img/" + name + ".jpg";
+
+    setTimeout(reblur, 2000, image);
+}
+
+function reblur(image) {
+    let name = image.id;
+    image.src = "./img/" + name + "blur.jpg";
 }
 
 window.onload = init;
